@@ -1,0 +1,43 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-container h3 {
+    text-align: center;
+}
+
+.register-container input, .register-container select {
+    padding: 10px 10px;
+    width: 50vw;
+    margin: 5px 0;
+}
+
+.register-container label {
+    font-size: 25px;
+    color: #350d36;
+}
+
+.register-container button {
+    width: 52vw;
+    background-color: #350d36;
+    border: 0;
+    padding: 10px;
+    border-radius: 2px;
+    color: white;
+    font-size: 20px;
+}
+
+.register-container button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #350d36;
+}
+
+.file-container {
+    border: 2px solid #350d36;
+    padding: 20px;
+    width: 50vw;
+}
