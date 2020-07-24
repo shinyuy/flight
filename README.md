@@ -1,6 +1,6 @@
 # Flight
 
-Flight is air travel application that shows available flights from airline companies, with their flight number, country, destination and date of departure.
+Flight is an air travel application that shows available flights from airline companies, with their flight number, country, destination and date of departure.
 This means if in use a client can get details about available flights, their destinations, and the time left for departure as a countdown. 
 This application is set such that admins that control it are able to login add and/or delete flights.
 
