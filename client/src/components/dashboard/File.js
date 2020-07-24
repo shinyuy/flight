@@ -5,6 +5,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faPlusCircle from '@fortawesome/fontawesome-free-solid/faPlusCircle';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+import { MyApiClient } from '../../HOC/apiclient/MyAPIClient';
 import "./addflight.css"
 
 
@@ -26,7 +27,7 @@ export default class File extends Component {
       }
       formData.append('file', files[0]);
 
-      axios.post('http://localhost:5000/images/uploadimage', formData, config)
+      MyApiClient.post('/images/uploadimage', formData, config)
       .then(response => {
           console.log(response.data);
         this.setState({
@@ -42,7 +43,7 @@ export default class File extends Component {
     }
 
     onRemove = (id) => {
-       axios.get(`http://localhost:5000/images/removeimage?public_id=${id}`).then(response=>{
+       MyApiClient.get(`/images/removeimage?public_id=${id}`).then(response=>{
            let images = this.state.uploadedFiles.filter(item=>{
                return item.public_id !== id;
            })
