@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import axios from "axios";
+//import axios from "axios";
 
 import File from "./File";
 import "./addflight.css";
+import { MyApiClient } from '../../HOC/apiclient/MyAPIClient';
 
 export default class AddApplicant extends Component {
   state = {
@@ -28,8 +29,8 @@ export default class AddApplicant extends Component {
     image
   ) => {
     console.log(this.state);
-    axios
-      .post("http://localhost:5000/flights", {
+    MyApiClient
+      .post("/flights", {
         name: this.state.name,
         country: this.state.country,
         number: this.state.number,

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import axios from "axios";
+//import axios from "axios";
 import moment from "moment";
 
 import "./deleteflight.css";
+import { MyApiClient } from '../../HOC/apiclient/MyAPIClient';
 
 export default class DeleteFlight extends Component {
   state = {
@@ -27,8 +28,8 @@ export default class DeleteFlight extends Component {
   }
 
   getFlights = () => {
-    axios
-      .get("http://localhost:5000/flights")
+    MyApiClient
+      .get("/flights")
       .then((res) => {
         console.log(res);
         this.setState({ data: res.data.flights });
@@ -41,7 +42,7 @@ export default class DeleteFlight extends Component {
   };
 
  deleteFlight = (id) => {
-      axios.delete("http://localhost:5000/flights",{
+      MyApiClient.delete("/flights",{
           id:id
       }).then({})
   }
