@@ -56,7 +56,7 @@ export default class Flights extends Component {
                     </div>
                     <div className="info">
                       <span>{flight.name}</span>
-                      <span>{flight.country}</span>
+                      <span>{flight.number}</span>
                       <span>{moment(flight.departure).format('MM-DD-YYYY')}</span>
                     </div>
                   </Link>

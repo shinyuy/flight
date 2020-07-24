@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Countdown from './Countdown';
+import Countdown from "./Countdown";
 
 import "./flightdetails.css";
 
@@ -28,9 +28,15 @@ export default class FlightDetails extends Component {
         <div className="flight-image">
           <img src={this.state.data.flight.images[0]} alt="Flight" />
         </div>
-        <div className="flight-name">{this.state.data.flight.name}</div>
-        <div className="flight-country">{this.state.data.flight.country}</div>
-        <div className="flight-destination">{this.state.data.flight.destination}</div>
+        <div className="country-destination-container">
+          <div>From: {this.state.data.flight.country}</div>
+          <div>To: {this.state.data.flight.destination}</div>
+        </div>
+        <div className="country-destination-container">
+          <div>Number: {this.state.data.flight.number}</div>
+          <div className="">Name: {this.state.data.flight.name}</div>
+        </div>
+
         <Countdown date={this.state.data.flight.departure} />
       </div>
     ) : (

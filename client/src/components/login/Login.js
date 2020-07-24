@@ -12,7 +12,7 @@ export default class Register extends Component {
 
   register = (email, password) => {
     axios
-      .post("http://localhost:3000/login", {
+      .post("http://localhost:5000/login", {
         email: this.state.email,
         password: this.state.password
       })
