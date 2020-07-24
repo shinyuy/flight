@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
-import axios from "axios";
+//import axios from "axios";
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faPlusCircle from '@fortawesome/fontawesome-free-solid/faPlusCircle';
 import CircularProgress from '@material-ui/core/CircularProgress';
