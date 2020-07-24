@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+//import axios from "axios";
 
+import { MyApiClient } from '../../HOC/apiclient/MyAPIClient';
 import "./header.css";
 import logo from "../../images/logo.jpg";
 
@@ -44,8 +45,8 @@ class Header extends Component {
   };
 
   logoutHandler = () => {
-    axios
-      .get("http://localhost:3000/logout")
+    MyApiClient
+      .get("/logout")
       .then((res) => {
         if (res.data.success) {
           this.props.history.push("/");
