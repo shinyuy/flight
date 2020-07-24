@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Countdown from "./Countdown";
 
+import { MyApiClient } from '../../HOC/apiclient/MyAPIClient';
 import "./flightdetails.css";
 
 export default class FlightDetails extends Component {
@@ -10,8 +11,8 @@ export default class FlightDetails extends Component {
   };
   componentDidMount() {
     let id = this.props.match.params._id;
-    axios
-      .get(`http://localhost:5000/flight/${id}`)
+    MyApiClient
+      .get(`/flight/${id}`)
       .then((res) => {
         console.log(res);
         this.setState({

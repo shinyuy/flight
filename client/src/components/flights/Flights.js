@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import moment from 'moment';
 
+import { MyApiClient } from '../../HOC/apiclient/MyAPIClient';
 import "./flights.css";
 
 export default class Flights extends Component {
@@ -28,8 +29,8 @@ export default class Flights extends Component {
   }
 
   getFlights = () => {
-    axios
-      .get("http://localhost:5000/flights")
+    MyApiClient
+      .get("/flights")
       .then((res) => {
           console.log(res)
         this.setState({ data: res.data.flights });

@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import "./auth.css"
+import { MyApiClient } from '../../HOC/apiclient/MyAPIClient';
 
 export default function(ComposedClass, reload, adminRoute) {
   class AuthCheck extends Component {
@@ -13,7 +14,7 @@ export default function(ComposedClass, reload, adminRoute) {
     };
 
     componentDidMount() {
-      axios.get("http://localhost:5000/auth").then(res => {
+      MyApiClient.get("/auth").then(res => {
         console.log(res.data)
         let user = res.data;
         if (!user.isAuth) {

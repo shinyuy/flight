@@ -34,5 +34,18 @@
   .flight-image img{
       width: 70vw;
   }
+  .country-destination-container {
+    width: 70vw;
+  }
+  .country-destination-container div {
+    width: 20vw;
+  }
   
+}
+
+@media only screen and (max-width: 600px) {
+  .country-destination-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+
 import "./register.css"
+import { MyApiClient } from '../../HOC/apiclient/MyAPIClient';
 
 export default class Register extends Component {
   state = {
@@ -18,8 +20,8 @@ export default class Register extends Component {
     date,
     password
   ) => {
-    axios
-      .post("http://localhost:5000/register", {
+    MyApiClient
+      .post("/register", {
         firstname: this.state.firstname,
         lastname: this.state.lastname,
         email: this.state.email,
